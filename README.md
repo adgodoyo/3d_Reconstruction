@@ -40,7 +40,7 @@ Cada equipo debe organizar su entrega con la siguiente estructura:
 Ejemplo para un grupo conformado por "JuanOrtiz" y "MaríaGodoy":  
 
 ```bash
-📂 reconstruccion-3d-sfm/
+📂 3d_Reconstruction/
 │── 📁 JuanOrtiz_MariaGodoy/         # Carpeta del grupo
 │   │── 📁 imagenes/       # Carpeta con las imágenes usadas
 │   │── 📂 src/            # Código en Python
