@@ -9,8 +9,8 @@ Este proyecto realiza la reconstrucción 3D de una escena a partir de un conjunt
  #### ├──  📂 imagenes c   (Imágenes de calibración)
 ### 📂 src  
  #### ├── reconstruccion3D.ipynb  (Notebook principal)  
- #### ├── fused.ply  (Nube de puntos generada)  
- #### ├── video.mkv  (Explicación del notebook en video)
+ ### fused.ply  (Nube de puntos generada)  
+ ### video.mkv  (Explicación del notebook en video)
 
  ## Requisitos
 
