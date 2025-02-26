@@ -1,116 +1,57 @@
-# 🏗️ Reconstrucción 3D con Structure from Motion (SfM)
+# Guía Rápida del Código de Visión
 
----
+Este documento proporciona una visión general del código incluido en el archivo Jupyter Notebook, detallando las librerías utilizadas y un paso a paso resumido del flujo del programa.
 
-## 📖 Descripción  
+## Librerías Utilizadas
 
-En este repositorio, los estudiantes implementarán un sistema de reconstrucción 3D utilizando **Structure from Motion (SfM)**. Cada equipo tomará imágenes de un objeto o escena y generará un modelo tridimensional a partir de ellas.  
+El código hace uso de las siguientes librerías de Python:
 
-Los estudiantes pueden utilizar **PyCOLMAP** o **VGGSfM** para realizar la reconstrucción.  
-
----
-
-## 📋 Instrucciones de Entrega  
-
-### **1️⃣ Clonar el Repositorio**  
-Cada grupo debe clonar este repositorio en su máquina local:  
-
-```bash 
-git clone https://github.com/tu_usuario/reconstruccion-3d-sfm.git
-cd reconstruccion-3d-sfm
+```python
+import numpy as np
+import cv2
+import matplotlib.pyplot as plt
+from skimage.feature import SIFT
+import pycolmap
 ```
 
-### **2️⃣ Crear una Nueva Rama**  
-Cada grupo debe trabajar en su propia rama, nombrada de la siguiente manera:  
-📌 **Formato:** `grupoX_nombre1_nombre2`  
+Estas librerías son esenciales para el procesamiento de imágenes, la detección de características y la visualización de resultados.
 
-Ejemplo:  
+## Paso a Paso del Código
+
+### 1. Carga de Imagen
+- Se lee la imagen desde un archivo usando OpenCV (`cv2.imread`).
+- Se convierte la imagen a escala de grises para facilitar el procesamiento.
+
+### 2. Aplicación del Detector de Características SIFT
+- Se inicializa el detector SIFT.
+- Se detectan y extraen características clave de la imagen.
+- Se almacenan los descriptores generados.
+
+### 3. Visualización de Resultados
+- Se dibujan los puntos clave detectados en la imagen.
+- Se muestra la imagen con los puntos clave resaltados utilizando Matplotlib.
+
+### 4. Matrices
+- Se calculan las matrices solicitadas y se reutiliza el código de chessboard
+
+### 5. Guardado de Resultados
+- Se guarda la imagen procesada con las características detectadas en un archivo de salida.
+
+## Cómo Ejecutar el Código
+
+Para ejecutar este código en un entorno Jupyter Notebook, asegúrate de tener instaladas las librerías necesarias. Puedes instalarlas con:
 
 ```bash
-git checkout -b grupo1_juan_maria
-git push origin grupo1_juan_maria
+pip install numpy opencv-python matplotlib scikit-image
 ```
 
-### **3️⃣ Estructura del Proyecto**  
+Luego, ejecuta cada celda en orden dentro del notebook.
 
-Cada equipo debe organizar su entrega con la siguiente estructura:  
-
-📌 **Formato:** `Integrante1_Integrante2/`  
-
-Ejemplo para un grupo conformado por "JuanOrtiz" y "MaríaGodoy":  
-
-```bash
-📂 3d_Reconstruction/
-│── 📁 JuanOrtiz_MariaGodoy/         # Carpeta del grupo
-│   │── 📁 imagenes/       # Carpeta con las imágenes usadas
-│   │── 📂 src/            # Código en Python
-│   │── 📜 video.mpeg     # Explicación breve del proceso y resultados
-│   │── 📜 README.md       # Explicación breve de su implementación con los resultados
-│── 📁 OtroGrupo/          # Otra entrega de un equipo distinto
-│── 📜 README.md           # Archivo principal del repositorio
-```
-El nombre de la carpeta no puede ir con espacios, puntos y considere que la primera letra del nombre y apellido va en mayúscula (el resto en minúscula)
-
-📌 **Nota:** Todas las imágenes utilizadas deben estar en la carpeta `imagenes/`.  
+## Notas Adicionales
+- OpenCV se usa para el manejo de imágenes y detección de características.
+- SIFT es un método efectivo para la detección de puntos clave en imágenes.
+- Matplotlib se emplea para visualizar los resultados de manera gráfica.
 
 ---
 
-## 🛠️ Pasos Generales para la Implementación  
-
-### **1️⃣ Captura de Imágenes**  
-- Tomar entre **10-20 imágenes** desde diferentes ángulos.  
-- Asegurar buena iluminación y enfoque.  
-- Guardarlas en `imagenes/`.  
-
-### **2️⃣ Preprocesamiento**  
-- Convertir imágenes a escala de grises.  
-- Aplicar filtros para mejorar contraste si es necesario.  
-
-### **3️⃣ Detección y Correspondencia de Características**  
-- Usar **SIFT, ORB o SuperPoint**.  
-- Emparejar puntos clave entre imágenes.  
-
-### **4️⃣ Estimación de Matriz Fundamental y Matriz Esencial**  
-- Calcular la **matriz fundamental** con RANSAC.  
-- Obtener la **posición relativa de las cámaras**.  
-
-### **5️⃣ Reconstrucción 3D con SfM**  
-
-#### 🔹 **Opción 1: PyCOLMAP**  
-1. Instalar COLMAP y PyCOLMAP.  
-2. Ejecutar el proceso en la terminal:  
-
-```bash
-colmap feature_extractor --database_path db.db --image_path ./imagenes
-colmap mapper --database_path db.db --image_path ./imagenes --output_path ./output
-``` 
-
-3. Exportar el modelo y visualizarlo en Open3D.  
-
-#### 🔹 **Opción 2: VGGSfM**  
-1. Descargar el modelo preentrenado.  
-2. Ejecutar la reconstrucción en Python.  
-
----
-
-## 📤 Subida de Archivos  
-
-### **1️⃣ Agregar los archivos al repositorio**  
-Una vez completado el trabajo, subir los archivos al repositorio en la rama del equipo:  
-
-```bash
-git add .
-git commit -m "Entrega del proyecto por grupo1_juan_maria"
-git push origin grupo1_juan_maria
-```
-
-### **2️⃣ Crear un Pull Request (PR)**  
-1. Ir al repositorio en GitHub.  
-2. Hacer clic en **"Pull Requests"** → **"New Pull Request"**.  
-3. Seleccionar **`grupo1_juan_maria` → `main`**.  
-4. Agregar una breve descripción y enviar la solicitud.  
-
----
-
-
-
+Este README proporciona una referencia rápida para comprender el código y su ejecución.
