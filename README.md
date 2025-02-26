@@ -50,8 +50,4 @@ Luego, ejecuta cada celda en orden dentro del notebook.
 ## Notas Adicionales
 - OpenCV se usa para el manejo de imágenes y detección de características.
 - SIFT es un método efectivo para la detección de puntos clave en imágenes.
-- Matplotlib se emplea para visualizar los resultados de manera gráfica.
 
----
-
-Este README proporciona una referencia rápida para comprender el código y su ejecución.
