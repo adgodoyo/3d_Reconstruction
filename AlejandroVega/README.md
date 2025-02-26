@@ -4,13 +4,16 @@ Este proyecto realiza la reconstrucción 3D de una escena a partir de un conjunt
 
 ## Estructura del Proyecto
 
-### 📂 imagenes  (Imágenes a color para modelar)  
- #### ├── 📂 imagenes bw  (Imágenes en blanco y negro para modelar)  
- #### ├──  📂 imagenes c   (Imágenes de calibración)
-### 📂 src  
- #### ├── reconstruccion3D.ipynb  (Notebook principal)  
- ### fused.ply  (Nube de puntos generada)  
- ### video.mkv  (Explicación del notebook en video)
+`````plaintext
+📂 Alejandro Vega
+  📂 imagenes  (Imágenes a color para modelar)  
+  ├── 📂 imagenes bw  (Imágenes en blanco y negro para modelar)  
+  ├──  📂 imagenes c   (Imágenes de calibración)
+  📂 src  
+  ├── reconstruccion3D.ipynb  (Notebook principal)  
+  fused.ply  (Nube de puntos generada)  
+  video.mkv  (Explicación del notebook en video)
+`````
 
  ## Requisitos
 
