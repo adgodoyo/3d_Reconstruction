@@ -1,7 +1,7 @@
 # Taller 1 - Reconstrucción 3D a partir de imágenes usando Structure from Motion (SfM).
 
 ## Descripción
-Implementar una reconstrucción 3D de una escena a partir de imágenes utilizando Structure from Motion (SfM) con PyCOLMAP. La primera parte está implementada en el notebook 'Reconstruccion3D_Vision.ipynb' y la segunda parte está implementada en reconstruccion3D_pycolmap.py.
+Implementar una reconstrucción 3D de una escena a partir de imágenes utilizando Structure from Motion (SfM) con PyCOLMAP. La primera parte está implementada en el notebook 'Reconstruccion3D_Vision.ipynb' y la segunda parte está implementada en 'reconstruccion3D_pycolmap.py'.
 
 ## Tabla de Contenidos
 - [Librerías](#librerías)
